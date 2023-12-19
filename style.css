@@ -72,7 +72,7 @@ h2 {
 }
 
 #invoice-details {
-    display:inline-block;
+    display:block;
     justify-content: space-between;
     margin-bottom: 20px;
 }
