@@ -1,0 +1,197 @@
+#invoice {
+    width: 794px; /* 8.27 inches * 96 DPI */
+    height: 1123px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #555;
+    margin-top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    position: relative;
+}
+
+#invoice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 0 0 0 100%;
+    z-index: 1;
+}
+
+.header {
+    color: #fff;
+    text-align: start;
+    height: 120px;
+}
+
+/* Logo styles */
+.logo-container {
+    max-width: 300px; /* Adjusted for responsiveness */
+    max-height: 120px;
+}
+
+.logo {
+    width: inherit;
+    height: inherit; 
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.curved-corner {
+    position: initial;
+    overflow: hidden;
+    border-radius: 0 0 0 50px;
+}
+
+.curved-corner::before,
+.curved-corner::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.curved-corner::before {
+    top: 0;
+    height: 110px;
+    background-color: #4bb5df;
+    clip-path: polygon(0 0, 100% 0, 200% 150%, 15% 15%);
+    border-radius: 0 0 0 10%;
+}
+
+.curved-corner::after {
+    top: 83px;
+    height: 50px;
+    background-color: #213d9b;
+    clip-path: polygon(5% 10%, 100% 0, 200% 100%, 15% 15%);
+    border-radius: 0 0 0 10%;
+    transform-origin: top right;
+    transform: rotate(5.8deg);
+}
+
+.footer {
+    font-family: 'Arial', sans-serif;
+    color: #18686b;
+}
+
+.contents {
+    font-family: 'Arial', sans-serif;
+    color: #292929;
+}
+
+.tab-switch {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+    max-width: 100%; /* Adjusted for responsiveness */
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.btn-cmn,
+.btn-pt {
+    margin: 0;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    margin-right: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+@media screen and (max-width: 600px) {
+    .logo-container {
+        text-align: start; /* Center the logo on smaller screens */
+    }
+    
+    .logo {
+        max-width: 250px; /* Adjusted for responsiveness */
+        max-height: 60px;
+    }
+    .curved-corner::before {
+        height: 10%; /* Adjust the height percentage for smaller screens */
+    }
+
+    .curved-corner::after {
+        top: 7%; /* Adjust the top percentage for smaller screens */
+        height: 5%; /* Adjust the height percentage for smaller screens */
+    }
+    .header {
+        height: auto; /* Adjust the height for smaller screens or set to auto based on your design */
+        padding: 10px; /* Add some padding to the header for better spacing on smaller screens */
+    }
+}
+@media print {
+    body {
+        background-color: #fff; /* Set background color for better visibility */
+        margin: 0; /* Remove default body margin */
+    }
+
+    .buttons {
+        display: none; /* Hide the buttons when printing */
+    }
+
+    
+
+    @page {
+        size: A4; /* Set page size to A4 */
+        margin: 1cm; /* Adjust margins as needed */
+    }
+
+    /* Hide text on buttons */
+    .buttons button {
+        color: transparent;
+    }
+}
+
+#invoice hr.bottom-hr {
+  
+    border-top: 6px solid #18686b; /* Set the color of the line */
+    display: block;
+    margin-top: 2.5em; /* Adjust the margin as needed */
+    margin-left: auto;
+    margin-right: auto;
+    border-style: groove;
+    border-width: 6px;
+}
+.invoice-details{
+   
+    color: #494949;
+}
+#review-clientpreview,
+#review-stamppreview {
+    width: 100px;
+    height: 100px;
+}

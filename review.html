@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include html2pdf library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.js"></script>
+
+    <title>Review Letter</title>
+  
+    <link rel="stylesheet" type="text/css" href="review.css">
+    <style>
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-switch">
+        <button class="btn-pt" onclick="printPDF()">Print PDF</button>
+    </div>
+    <div id="invoice">
+        <div class="curved-corner">
+            <div class="inner-curve">
+                <div class="header">
+                    <img src="logo.jpg" alt="Logo" class="logo">
+                </div>
+                <hr>
+                <div class="center-content">
+                    <center><u><h2>Internship Offer Letter</h2></u></center>
+                    <br><br><br><br>
+                    <div class="invoice-details">
+                        <h3>
+                            Date: <span id="invoice-date"></span><br><br>
+                            Dear <span id="client-name"></span>,<br><br>
+                            We would like to congratulate you on being selected for the
+                            "<span id="client-address"></span>" Internship position with Collab Vision Infosolutions, effective Start Date
+                            <span id="start-date"></span>, All of us are excited about this opportunity provided to you!
+                    
+                            <br><br>As such, your internship will include training/orientation and focus primarily on learning and developing new skills.
+                    
+                            <br><br>Again, congratulations and we look forward to working with you!
+                        </h3>
+                        <img id="review-clientpreview" alt="" class="hidden" src="stamp.jpg">
+                        <h3>Yours Sincerely,</h3>
+                        <img id="review-stamppreview" alt="" class="hidden" src="stamp.jpg">
+                        <h3>Sujata P.B<br>
+                        Owner of<br>
+                        collab Vision Infosolutions</h3>
+                    </div><br>
+                    
+                    <hr>
+                    <div class="footer">
+                        <center><b><h2>Collab Vision Infosolutions</h2></b></center>
+                        <div class="contents">
+                            <center><h5>Plot No.14 B, Jawahar Nagar, Kolhapur(Mah)-416012</h5></center>
+                            <h5><p style="float: left;">  www.collabvision.in</p>
+                                <p style="float: right;">info@collabvision.in</p></h5>
+                            <center><h5>Mob. 8767421060</h5></center>
+                            
+                        </div>
+                        <hr class="bottom-hr">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+<script src="review.js"></script>
+</html>

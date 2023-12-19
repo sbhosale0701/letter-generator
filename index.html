@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer Letter</title>
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+<body>
+    <form id="form">
+
+    <div id="invoice">
+        <u><h2>Employee Details</h2></u>
+        <div id="invoice-details">
+            <div class="radio-container">
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+              </div>
+              <label for="invoicedate">Date:</label>
+              <input type="text" class="cmn-input" id="invoicedate" value="20-12-2023">              
+                <label for="clientname">Employee Name</label>
+                <input type="text" class="cmn-input" id="clientname" value="">
+                <label for="clientaddress">Employee Designation</label>
+                <input type="text" class="cmn-input" id="clientaddress" value="">
+                <label for="clientemail">Employee Email</label>
+                <input type="text" class="cmn-input" id="clientemail" value="">
+                <label for="startdate">Start Date:</label>
+                <input type="text" class="cmn-input" id="startdate" value="20-12-2023">
+                <!-- <label for="signimg">Sign image:</label>
+                <input type="file" class="cmn-input" id="signimg" accept="image/*" onchange="previewImage(this, 'clientpreview-data')">
+                <img id="clientpreview" alt="Client Preview" class="hidden" src="https://via.placeholder.com/100x100">
+                <label for="stampimg">Stamp image:</label>
+                <input type="file" class="cmn-input" id="stampimg" accept="image/*" onchange="previewImage(this, 'stamppreview-data')">
+                <img id="stamppreview" alt="Stamp Preview" class="hidden" src="https://via.placeholder.com/100x100"> -->
+                <div class="tab-switch">
+                    <button type="button" id="previewButton">Preview</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+//         document.addEventListener('DOMContentLoaded', function() {
+//             // Retrieve image data from localStorage and display preview images
+//             const clientPreviewData = localStorage.getItem('clientpreview-data');
+//             const stampPreviewData = localStorage.getItem('stamppreview-data');
+            
+//             displayImage('clientpreview', clientPreviewData);
+//             displayImage('stamppreview', stampPreviewData);
+//         });
+
+//         function previewImage(input, previewId) {
+//     const preview = document.getElementById(previewId);
+//     const file = input.files[0];
+
+//     if (file) {
+//         const reader = new FileReader();
+//         reader.onload = function (e) {
+//             const imageData = e.target.result;
+//             console.log('Image data:', imageData);
+
+//             // Store the image data in localStorage
+//             localStorage.setItem(previewId, imageData);
+
+//             preview.src = imageData;
+//             preview.classList.remove('hidden');
+//         };
+//         reader.readAsDataURL(file);
+//     } else {
+//         // If no file is selected, show a placeholder image
+//         const placeholderSrc = 'https://via.placeholder.com/100x100';
+//         console.log('Setting placeholder image:', placeholderSrc);
+
+//         // Store null or placeholder image data in localStorage
+//         localStorage.setItem(previewId, null);
+
+//         preview.src = placeholderSrc;
+//         preview.classList.remove('hidden');
+//     }
+// }
+
+//         function displayImage(elementId, imageData) {
+//             const imageElement = document.getElementById(elementId);
+//             if (imageData) {
+//                 imageElement.src = imageData;
+//                 imageElement.classList.remove('hidden');
+//             }
+//         }
+
+        const form = document.getElementById('form');
+        const invoicedate = document.getElementById('invoicedate');
+        const clientname = document.getElementById('clientname');
+        const clientaddress = document.getElementById('clientaddress');
+        const startdate = document.getElementById('startdate');
+        const previewButton = document.getElementById('previewButton');
+    
+        previewButton.addEventListener('click', function () {
+            const invoicedateValue = invoicedate.value;
+            const clientnameValue = clientname.value;
+            const clientaddressValue = clientaddress.value;
+            const startdateValue = startdate.value;
+    
+            // Retrieve image data from localStorage
+            const imageData = localStorage.getItem('clientpreview-data');
+            const stampData = localStorage.getItem('stamppreview-data');
+
+            // Store other form values in localStorage
+            localStorage.setItem('invoice-date', invoicedateValue);
+            localStorage.setItem('client-name', clientnameValue);
+            localStorage.setItem('client-address', clientaddressValue);
+            localStorage.setItem('start-date', startdateValue);
+    
+            // Redirect to "review.html" after setting localStorage values
+            window.location.href = 'review.html';
+        });
+    </script>
+</body>
+</html>
